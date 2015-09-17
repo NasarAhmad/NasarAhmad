@@ -1,0 +1,151 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class calc extends JFrame {
+
+public calc(){
+	 
+	setLayout(new BorderLayout());
+	 
+	
+  JPanel first = new JPanel(new GridLayout(3,1,3,3));
+ 
+	final JTextField tf1 = new JTextField("0",12);
+	final JTextField tf2 = new JTextField("0",12);
+	final JTextField tf3 = new JTextField("0",12);
+	tf3.setEditable(false);
+	first.add(tf1);
+	first.add(tf2);
+	first.add(tf3);
+	
+	add(first,BorderLayout.CENTER);
+	
+	
+	 JPanel secound = new JPanel(new GridLayout(5,1,5,5));
+	
+	 JButton plus = new JButton("+");
+	 plus.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			String tff1 = tf1.getText();
+			String tff2 = tf2.getText();
+			
+			int num1 = Integer.parseInt(tff1);
+			int num2 = Integer.parseInt(tff2);
+			int num3 = num1+num2;
+			tf3.setText(""+num3);
+			
+		}
+	});
+	JButton min = new JButton("-");
+	min.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			String tff1 = tf1.getText();
+	String tff2 = tf2.getText();
+	
+			int num1 = Integer.parseInt(tff1);
+	int num2 = Integer.parseInt(tff2);
+	int num3 = num1-num2;
+	tf3.setText(""+num3);
+		}
+	});
+	
+	
+	JButton multiple = new JButton("*");
+	multiple.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			String tff1 = tf1.getText();
+	String tff2 = tf2.getText();
+	
+	int num1 = Integer.parseInt(tff1);
+	int num2 = Integer.parseInt(tff2);
+	int num3 = num1*num2;
+	tf3.setText(""+num3);
+		}
+	});
+	
+	JButton div = new JButton("/");
+	div.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			String tff1 = tf1.getText();
+	String tff2 = tf2.getText();
+	
+	int num1 = Integer.parseInt(tff1);
+	int num2 = Integer.parseInt(tff2);
+	int num3 = num1/num2;
+	tf3.setText(""+num3);
+		}
+	});
+	
+	
+	JButton clear = new JButton("clear");
+	clear.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			tf1.setText("0");
+	tf2.setText("0");
+	tf3.setText("0");
+	
+		}
+	});
+	
+     
+	secound.add(plus);
+	secound.add(min);
+	secound.add(multiple);
+	secound.add(div);
+	secound.add(clear);
+	
+	add(secound,BorderLayout.EAST);
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    setSize(350, 200);
+    setVisible(true);
+    setTitle("calculator");
+    setLocationRelativeTo(null);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+  
+ 
+}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ calc c =new calc();
+	}
+
+}
+
+  
+
+
