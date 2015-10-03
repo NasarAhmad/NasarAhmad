@@ -15,7 +15,7 @@ public class frameANDbuttone {
    ahmad.setSize(300, 500);
    ahmad.getContentPane().add((start),BorderLayout.SOUTH);
    ahmad.getContentPane().add(say);
-   
+   ahmad.setTitle("frame");
    ahmad.setVisible(true);
    ahmad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
